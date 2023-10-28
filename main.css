@@ -1,4 +1,6 @@
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
   width: auto;
   font-family: Arial, Helvetica, sans-serif;
@@ -122,7 +124,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  background-position: center center;
+  background-position: center;
 }
 ol,
 ul {
@@ -146,11 +148,9 @@ table {
 h1 {
   font-size: 3rem;
   color: black;
-  padding-bottom: 2.5rem;
 }
 h2 {
   font-size: 2.25rem;
-  padding-bottom: 1.5rem;
   color: black;
   font-weight: bold;
 }
@@ -163,9 +163,6 @@ p {
   padding-bottom: 1.5rem;
   color: black;
   font-weight: bold;
-}
-p:hover {
-  color: yellow;
 }
 
 img {
@@ -182,10 +179,36 @@ label {
   color: black;
   padding-right: 1rem;
 }
+header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: transparent;
+  flex-direction: column;
+}
+
+.main-content-wrapper {
+  width: 90vw;
+  min-width: 25vw;
+  border-color: black;
+  margin: 100px auto 0;
+  border-radius: 20px;
+  background-color: transparent;
+  padding: 15rem 10rem 35px;
+  text-align: center;
+}
 
 .input-container {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.input-wrapper {
   background-color: #f7f7f7;
   border-radius: 10px;
+  margin: 0.25rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -220,9 +243,9 @@ label {
   box-shadow: 0 0 20px rgba(81, 203, 238, 0.5);
 }
 button {
-  margin: 2rem;
+  margin: 1rem;
   font-weight: bold;
-  font-size: 1.25rem;
+  font-size: 1rem;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -234,13 +257,12 @@ button {
 }
 button:hover {
   background-color: #2980b9;
+  box-shadow: 0 0 20px rgba(81, 203, 238, 0.5);
 }
 button:active {
   transform: scale(0.95);
 }
-button:focus {
-  box-shadow: 0 0 10px rgba(81, 203, 238, 1);
-}
+
 button:disabled {
   background-color: #bdc3c7; /* Grayed out */
   cursor: not-allowed; /* Indicate the button is not clickable */
@@ -256,17 +278,44 @@ button:disabled {
   text-align: center;
 }
 
-.mainContent {
-  padding-top: 25rem;
+.sectionContent {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: row;
-  width: auto;
+  flex-direction: column;
+  /* width: auto; */
   text-align: center;
 }
 
 #weatherResult {
   margin-top: 20px;
   display: none;
+}
+
+/* Media Queries */
+@media (max-width: 600px) {
+  header {
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+  }
+
+  .main-content-wrapper {
+    padding-top: 5rem;
+  }
+
+  .sectionContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: auto;
+    text-align: center;
+  }
+
+  .input-container {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+  }
 }

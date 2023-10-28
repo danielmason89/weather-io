@@ -11,24 +11,32 @@
     <div class="landingPage">
       <header class="header-styles">
         <h1>Weather App</h1>
-      </header>
-      <main>
         <span>
           <p>Check below to see the current weather</p>
         </span>
-        <section class="mainContent">
-          <label for="city">Enter City: </label>
-          <div class="input-container">
-            <input
-              type="text"
-              id="styled-input"
-              placeholder="Enter something..."
-            />
-          </div>
-        </section>
-        <button class="styled-button" onclick="fetchWeather()">
-          Get Local Weather
-        </button>
+      </header>
+      <main class="main-content-wrapper">
+        <form class="sectionContent">
+          <section class="input-container">
+            <div class="input-wrapper">
+              <input
+                type="text"
+                id="styled-input"
+                placeholder="Enter City..."
+              />
+            </div>
+            <div class="input-wrapper">
+              <input
+                type="text"
+                id="styled-input"
+                placeholder="Enter Country..."
+              />
+            </div>
+          </section>
+          <button class="styled-button" onclick="fetchWeather()">
+            Get Local Weather
+          </button>
+        </form>
       </main>
 
       <div id="weatherResult">

@@ -1,20 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>First Project</title>
-    <link rel="stylesheet" href="main.css">
-</head>
-<body>
-    <div class="myPage">
-        <h1>Hello World! this is an h1 element</h1>
-        <h2>I am a header 2</h2>
-        <p>I am a paragraph, and this photo is by Matthieu Lemarchal</p>
-        <img src="snow.jfif" alt="Photo by 
-        Matthieu Lemarchal">
-        <!-- https://unsplash.com/@matthieulemarchal -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Checker</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <div class="landingPage">
+      <header class="header-styles">
+        <h1>Weather App</h1>
+      </header>
+      <main>
+        <span>
+          <p>Check below to see the current weather</p>
+        </span>
+        <section class="mainContent">
+          <label for="city">Enter City: </label>
+          <div class="input-container">
+            <input
+              type="text"
+              id="styled-input"
+              placeholder="Enter something..."
+            />
+          </div>
+        </section>
+        <button class="styled-button" onclick="fetchWeather()">
+          Get Local Weather
+        </button>
+      </main>
+
+      <div id="weatherResult">
+        <h2>Weather in <span id="cityName"></span></h2>
+        <p><strong>Temperature:</strong> <span id="temperature"></span>°C</p>
+        <p><strong>Condition:</strong> <span id="condition"></span></p>
+      </div>
     </div>
-</body>
+  </body>
 </html>

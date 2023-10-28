@@ -1,34 +1,272 @@
-
 * {
-    color: gray;
-    background-color: blue;
-    width: auto;
-    font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  width: auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+html,
+body {
+  font-size: 16px;
+  height: 100%;
+}
+body {
+  line-height: 1;
+  background-image: url("images/daniel-ramirez-q4TfWtnz_xw-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 h1 {
-    font-size: 30px;
-    color: yellow;
+  font-size: 3rem;
+  color: black;
+  padding-bottom: 2.5rem;
 }
 h2 {
-    font-size: 20px;
-    color: black;
+  font-size: 2.25rem;
+  padding-bottom: 1.5rem;
+  color: black;
+  font-weight: bold;
+}
+h3 {
+  font-size: 1.5rem;
 }
 p {
-    font-size: 18px;
-    color:black;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  padding-bottom: 1.5rem;
+  color: black;
+  font-weight: bold;
 }
 p:hover {
-    color: yellow;
+  color: yellow;
 }
+
 img {
-    border-radius: 35px; 
-    opacity: .6;
+  border-radius: 35px;
+  opacity: 0.6;
 }
 img:hover {
-    border-radius: 100px;
-    opacity: 1;
+  border-radius: 100px;
+  opacity: 1;
 }
-.myPage {
-    width: auto;
-    text-align: center;
+
+label {
+  font-size: 1.75rem;
+  color: black;
+  padding-right: 1rem;
+}
+
+.input-container {
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#styled-input {
+  font-size: 1rem;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  width: 250px;
+  transition: box-shadow 0.3s ease;
+}
+#styled-input::placeholder {
+  color: #888;
+  opacity: 1;
+}
+
+#styled-input:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #888;
+}
+
+#styled-input::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #888;
+}
+#styled-input:focus {
+  box-shadow: 0 0 10px rgb(115, 122, 124);
+}
+
+#styled-input:hover {
+  box-shadow: 0 0 20px rgba(81, 203, 238, 0.5);
+}
+button {
+  margin: 2rem;
+  font-weight: bold;
+  font-size: 1.25rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-image: linear-gradient(to right, #3498db, #a3b4aa);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  outline: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+button:hover {
+  background-color: #2980b9;
+}
+button:active {
+  transform: scale(0.95);
+}
+button:focus {
+  box-shadow: 0 0 10px rgba(81, 203, 238, 1);
+}
+button:disabled {
+  background-color: #bdc3c7; /* Grayed out */
+  cursor: not-allowed; /* Indicate the button is not clickable */
+}
+.landingPage {
+  height: 100%;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: auto;
+  text-align: center;
+}
+
+.mainContent {
+  padding-top: 25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  width: auto;
+  text-align: center;
+}
+
+#weatherResult {
+  margin-top: 20px;
+  display: none;
 }

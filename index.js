@@ -8,7 +8,7 @@ const port = 3000;
 const weather = require("./weather");
 
 app.use(express.json());
-const whitelist = ['http://127.0.0.1', 'http://127.0.0.1:5500']
+const whitelist = ['http://127.0.0.1', 'http://127.0.0.1:5500', 'https://danielmason89.github.io/daniel-mason-project-submission-for-intro-to-development/']
 const corsOptions = {
     origin: (origin, callback) => {
         if (!origin || whitelist.indexOf(origin) !== -1) {

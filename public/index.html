@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Checker</title>
+    <link rel="stylesheet" href="./main.css" />
+  </head>
+  <body>
+    <div class="landingPage">
+      <header class="header-styles">
+        <h1>Weather App</h1>
+        <span>
+          <p>Check below to see the current weather</p>
+        </span>
+      </header>
+      <main class="main-content-wrapper">
+        <section class="card" id="hidden">
+          <div class="weather">
+            <section class="header-section">
+              <img src="./images/rain.png" class="weather-icon" alt="" />
+              <header class="weather-header">
+                <h2 class="temp">22°c</h2>
+                <h3 class="city">New York</h3>
+              </header>
+            </section>
+            <sub-section class="details">
+              <div class="col">
+                <img src="./images/humidity.png" alt="" />
+                <span>
+                  <p class="humidity">50%</p>
+                  <p>Humidity</p>
+                </span>
+              </div>
+              <div class="col">
+                <img src="./images/wind.png" alt="" />
+                <span>
+                  <p class="wind">40 km/h</p>
+                  <p>Wind Speed</p>
+                </span>
+              </div>
+            </sub-section>
+          </div>
+        </section>
+        <form class="sectionContent">
+          <section class="input-container">
+            <div class="input-wrapper">
+              <input
+                type="text"
+                id="styled-input"
+                placeholder="Enter City..."
+              />
+            </div>
+            <!-- <div class="input-wrapper">
+              <input
+                type="text"
+                id="styled-input"
+                placeholder="Enter Country..."
+              />
+            </div> -->
+          </section>
+          <button id="styled-button">
+            Get Local Weather
+            <img src="./images/search.png" alt="" />
+          </button>
+          <div class="error">
+            <p>Invalid City - Please Enter A valid City</p>
+          </div>
+        </form>
+      </main>
+
+      <div id="weatherResult">
+        <h2>Weather in <span id="cityName"></span></h2>
+        <p><strong>Temperature:</strong> <span id="temperature"></span>°C</p>
+        <p><strong>Condition:</strong> <span id="condition"></span></p>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

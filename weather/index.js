@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 let fetch;
 
+
 import('node-fetch').then(module => {
     fetch = module.default;
 });
@@ -11,11 +12,13 @@ const fetchWeather = async (searchtext) => {
   try {
     const weatherStream = await fetch(url);
     const weatherJson = await weatherStream.json();
+    if(weatherJson.cod && weatherJson.cod !== 200) {
+      throw new Error(weatherJson.message);
+  }
     return weatherJson;
-  } catch {
-    (err) => {
-      return { Error: err.stack };
-    };
+  } catch (err) {
+    console.error(err);
+    return { error: err.message };
   }
 };
 
@@ -26,6 +29,9 @@ router.get("/", (req, res) => {
 router.get("/:searchtext", async (req, res) => {
   const searchtext = req.params.searchtext;
   const data = await fetchWeather(searchtext);
+  if(data.error) {
+    return res.status(400).json({ error: data.error });
+}
   res.json(data);
 });
 

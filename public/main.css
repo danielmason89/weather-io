@@ -585,7 +585,6 @@ button:disabled {
     justify-content: start;
     align-items: none;
     overflow-y: scroll;
-
   }
 
   .future-forecast .today .temp {
@@ -619,5 +618,14 @@ button:disabled {
 
   .current-info .others .weather-item{ 
     font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+
+  .future-forecast {
+    justify-content: start;
+    align-items: none;
+    overflow-y: scroll;
   }
 }

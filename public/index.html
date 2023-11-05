@@ -4,28 +4,108 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weather Checker</title>
+    <meta name="title" content="weather-check">
+    <meta name="description" content="weather-check is a weather app made by Daniel Mason">
+    <link rel="shortcut icon" href="./images/weather-news.png" type="png">
+    <title>Weather-Checker.io</title>
     <link rel="stylesheet" href="./main.css" />
   </head>
   <body>
-    <div class="landingPage">
-      <header class="header-styles">
-        <h1>Weather App</h1>
-        <span>
-          <p>Check below to see the current weather</p>
-        </span>
-      </header>
-      <main class="main-content-wrapper">
+    <!-- Header Section -->
+      <nav class="header">
+        <div class="header-container">
+          <img class="weather-logo" src="./images/weather-news.png" alt="logo">
+          <h1 style="padding-left: 0.5rem;">WeatherCheckio</h1>
+        </div>
+        <!-- Local Daily Weather Form -->
+        <form class="formContent">
+          <section class="input-container">
+            <div class="input-wrapper">
+              <input
+                type="text"
+                id="styled-input"
+                aria-label="Enter a City..."
+                placeholder="Enter a City..."
+              />
+            </div>
+          </section>
+          <button id="styled-button">
+            <p>Get Local Weather</p>
+            <img src="./images/search.png" alt="" />
+          </button>
+          <div class="error">
+            <p>Invalid City - Please Enter A valid City</p>
+          </div>
+          <!-- 5-day local Weather forecast form -->
+        </form>
+        <div class="current-info-container">
+          <div class="current-info">
+            <div class="date-container">
+              <div class="time" id="time">
+                12:30 <span id="am-pm">PM</span>
+                <div class="date" id="date">
+                  Monday, 24 day
+                </div>
+                <div class="others" id="current-weather-items">
+                  <div class="weather-item">
+                    <div>Humidity</div>
+                    <div>95.2%</div>
+                  </div>
+                  <div class="weather-item">
+                    <div>Pressure</div>
+                    <div>121</div>
+                  </div>
+                  <div class="weather-item">
+                    <div>Wind Speed</div>
+                    <div>222km/h</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="place-container">
+              <div class="time-zone" id="time-zone">Asia/Kolkata</div>
+              <div id="country" class="country">IN</div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- Nav/Form Section -->
+      <nav class="form-section">
+      <!-- <form class="formContent">
+        <section class="input-container">
+          <div class="input-wrapper">
+            <input
+              type="text"
+              id="styled-input1"
+              aria-label="Enter a City..."
+              placeholder="Enter a City..."
+            />
+          </div>
+        </section>
+        <button id="styled-button1">
+          <p>Get Local 5-day Forecast</p>
+          <img src="./images/search.png" alt="" />
+        </button>
+        <div class="error">
+          <p>Invalid City - Please Enter A valid City</p>
+        </div>
+      </form> -->
+    </nav>
+    <!-- Main Section - Local and 5-day forecast Cards -->
+      <main>
+        <div class="weather-wrapper">
+          <!-- Local Weather -->
         <section class="card" id="hidden">
           <div class="weather">
+            <h3>Today's Weather</h3>
             <section class="header-section">
               <img src="" class="weather-icon" alt="" />
-              <header class="weather-header">
+              <section class="weather-header">
                 <h2 class="temp"></h2>
                 <h3 class="city"></h3>
-              </header>
+              </section>
             </section>
-            <sub-section class="details">
+            <section class="details">
               <div class="col">
                 <img src="./images/humidity.png" alt="" />
                 <span>
@@ -41,42 +121,83 @@
                   <p>Wind Speed</p>
                 </span>
               </div>
-            </sub-section>
+            </section>
           </div>
         </section>
-        <form class="sectionContent">
-          <section class="input-container">
-            <div class="input-wrapper">
-              <input
-                type="text"
-                id="styled-input"
-                placeholder="Enter City for Today's Weather..."
-              />
+        <section class="future-forecast">
+          <!-- current temp -->
+          <div class="today" id="current-temp">
+            
+            <div class="others">
+              <div class="day">Monday</div>
+            <div class="temp">Night - 25.6&#176; C</div>
+            <div class="temp">Day - 35.6&#176; C</div>
             </div>
-            <!-- <div class="input-wrapper">
-              <input
-                type="text"
-                id="styled-input"
-                placeholder="Enter City for 5 day Forecast..."
-              />
-            </div> -->
-          </section>
-          <button id="styled-button">
-            Get Local Weather
-            <img src="./images/search.png" alt="" />
-          </button>
-          <div class="error">
-            <p>Invalid City - Please Enter A valid City</p>
+            <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
           </div>
-        </form>
-      </main>
-
-      <!-- <div id="weatherResult">
-        <h2>Weather in <span id="cityName"></span></h2>
-        <p><strong>Temperature:</strong> <span id="temperature"></span>°C</p>
-        <p><strong>Condition:</strong> <span id="condition"></span></p>
+          <!-- weather forecast -->
+          <div class="weather-forecast" id="weather-forecast">
+            <div class="weather-forecast-item">
+              <div class="day">Tue</div>
+              <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+              <div class="temp">Night - 25.6&#176; C</div>
+              <div class="temp">Day - 35.6&#176; C</div>
+            </div>
+            <div class="weather-forecast-item">
+              <div class="day">Wed</div>
+              <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+              <div class="temp">Night - 25.6&#176;C</div>
+              <div class="temp">Day - 35.6&#176; C</div>
+            </div>
+            <div class="weather-forecast-item">
+              <div class="day">Thrus</div>
+              <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+              <div class="temp">Night - 25.6&#176; C</div>
+              <div class="temp">Day - 35.6&#176; C</div>
+            </div>
+            <div class="weather-forecast-item">
+              <div class="day">Friday</div>
+              <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+              <div class="temp">Night - 25.6&#176; C</div>
+              <div class="temp">Day - 35.6&#176; C</div>
+            </div>
+            <div class="weather-forecast-item">
+              <div class="day">Sat</div>
+              <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+              <div class="temp">Night - 25.6&#176; C</div>
+              <div class="temp">Day - 35.6&#176; C</div>
+            </div>
+          </div>
+        </section>
+        <!-- <section class="card">
+          <div class="weather">
+            <h3>Date</h3>
+            <section class="header-section">
+              <img class="open-weather-icon" src="http://openweathermap.org/img/wn/10d@4x.png" alt="weather description">
+              <section class="weather-header">
+                <h2 class="temp">test</h2>
+                <h3 class="city">tset</h3>
+              </section>
+            </section>
+            <section class="details">
+              <div class="col">
+                <img src="./images/humidity.png" alt="" />
+                <span>
+                  <p class="humidity">tst</p>
+                  <p>Humidity</p>
+                </span>
+              </div>
+              <br/>
+              <div class="col">
+                <img src="./images/wind.png" alt="" />
+                <span>
+                  <p class="wind">test</p>
+                  <p>Wind Speed</p>
+                </span>
+              </div>
+        </section> -->
       </div>
-    </div> -->
-    <script src="./script.js"></script>
+      </main>
+    <script src="./script.js" type="module"></script>
   </body>
 </html>

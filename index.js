@@ -1,11 +1,13 @@
-require("dotenv").config();
-const express = require("express");
-const rateLimit = require("express-rate-limit");
-const cors = require("cors");
-const app = express();
-const port = 3000;
+import dotenv from "dotenv";
+import express from "express"
+import rateLimit from "express-rate-limit";
+import cors from "cors";
+import weather from "./weather/index.js"
+dotenv.config;
 
-const weather = require("./weather");
+const app = express();
+
+// const weather = require("./weather");
 
 app.use(express.json());
 app.use(express.static('public'));
@@ -23,13 +25,13 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 const limiter = rateLimit({
-    windowMs: 1000,
-    max: 1
-});
+    windowMs: parseInt(process.env.RATE_LIMIT_WINDOW_MS, 10),
+    max: parseInt(process.env.RATE_LIMIT_MAX_REQUESTS, 10)
+  });
 app.use(limiter);
 
 app.get("/", (req, res) => res.json({ success: "Hello World" }));
 
 app.use("/weather", weather);
 
-app.listen(port, () => console.log(`App listening on port ${port}`));
+app.listen(process.env.PORT || 3000, () => console.log(`App listening on port ${process.env.PORT}`));

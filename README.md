@@ -24,4 +24,4 @@ To run the app, enter this command in the terminal ## npm run dev
 
  ## The application should be up and running on http://localhost:3000.
 
-@another_contributor 🐛
+@danielmason89 🐛

@@ -16,10 +16,11 @@ and be sure to run npm install prior to running the app.
 To install Weather-Checker.io, follow these steps:
 
 ```bash
-git clone https://github.com/[your-github-username]/[your-repo-name]
-cd [your-repo-name]
-npm install
+git clone https://github.com/danielmason89/daniel-mason-project-submission-for-intro-to-development.git
+cd daniel-mason-project-submission-for-intro-to-development
+npm install also install this ## npm install -g http-server
 
+Be sure to do this otherwise, some of the functionality of the app won't work
 To run the app, enter this command in the terminal ## npm run dev
 
  ## The application should be up and running on http://localhost:3000.

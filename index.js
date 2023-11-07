@@ -10,7 +10,7 @@ import cors from "cors";
 import weather from "./weather/index.js";
 
 // Initialize configuration from .env file
-dotenv.config;
+dotenv.config();
 
 // Create an Express application instance
 const app = express();
@@ -24,11 +24,13 @@ const whitelist = [
   "http://127.0.0.1",
   "http://127.0.0.1:5500",
   "https://danielmason89.github.io/daniel-mason-project-submission-for-intro-to-development/",
+  "https://65496f9271ad240ef5ea17e2--silver-sopapillas-a40fba.netlify.app/",
 ];
 // Set up CORS options, allowing requests from whitelisted domains and handling errors
+// In your CORS options, consider adding a check for the 'null' origin.
 const corsOptions = {
   origin: (origin, callback) => {
-    if (!origin || whitelist.indexOf(origin) !== -1) {
+    if (!origin || whitelist.includes(origin)) {
       callback(null, true);
     } else {
       callback(new Error("Not allowed by CORS"));
@@ -55,3 +57,8 @@ app.use("/weather", weather);
 app.listen(process.env.PORT || 3000, () =>
   console.log(`App listening on port ${process.env.PORT}`)
 );
+
+const ngrok = require("ngrok");
+(async function () {
+  const url = await ngrok.connect();
+})();

@@ -57,8 +57,3 @@ app.use("/weather", weather);
 app.listen(process.env.PORT || 3000, () =>
   console.log(`App listening on port ${process.env.PORT}`)
 );
-
-const ngrok = require("ngrok");
-(async function () {
-  const url = await ngrok.connect();
-})();

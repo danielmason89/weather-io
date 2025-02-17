@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="title" content="weather-check" />
+  <meta name="description" content="weather-check is a weather app made by Daniel Mason" />
+  <link rel="shortcut icon" href="./images/weather-news.png" type="png" />
+  <title>Weather-Checker.io</title>
+  <link rel="stylesheet" href="./main.css" />
+</head>
+
+<body>
+  <!-- Nav/Form Section -->
+  <nav class="header">
+    <!-- Header Section -->
+    <header class="header-container">
+      <img class="weather-logo" src="./images/weather-news.png" alt="logo" />
+      <h1 style="padding-left: 0.5rem">WeatherCheck.io</h1>
+    </header>
+    <!-- Local Daily Weather Form -->
+    <form class="formContent" id="search-form">
+      <section class="input-container">
+        <div class="input-wrapper">
+          <input type="text" id="styled-input" aria-label="Enter a City..." placeholder="Enter a City..." />
+        </div>
+      </section>
+      <button type="submit" id="styled-button">
+        <p>Get Any Cities Local Weather</p>
+        <img src="./images/search.png" alt="" />
+      </button>
+      <div class="error">
+        <p>Invalid City - Please Enter A valid City</p>
+      </div>
+    </form>
+    <!-- Daily/Local Weather -->
+    <div class="current-info-container">
+      <div class="current-info">
+        <div class="date-container">
+          <div class="time" id="time"><span id="am-pm"></span></div>
+          <div class="date" id="date"></div>
+          <div class="others" id="current-weather-items"></div>
+        </div>
+        <div class="place-container">
+          <div class="time-zone" id="time-zone"></div>
+          <div id="country" class="country"></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- Main Section - Local and 5-day forecast Cards -->
+  <main>
+    <div class="weather-wrapper">
+      <!-- Local Weather -->
+      <div class="modal-bg">
+        <section class="card" id="hidden">
+          <div class="weather">
+            <h3>Today's Weather</h3>
+            <div class="bottom-card">
+              <section class="header-section">
+                <img src="" class="weather-icon" alt="" />
+                <section class="weather-header">
+                  <h2 class="temp"></h2>
+                  <h3 class="city"></h3>
+                </section>
+              </section>
+              <section class="details">
+                <div class="col">
+                  <img src="./images/humidity.png" alt="" />
+                  <span>
+                    <p class="humidity"></p>
+                    <p>Humidity</p>
+                  </span>
+                </div>
+                <br />
+                <div class="col">
+                  <img src="./images/wind.png" alt="" />
+                  <span>
+                    <p class="wind"></p>
+                    <p>Wind Speed</p>
+                  </span>
+                </div>
+              </section>
+            </div>
+          </div>
+          <button class="modal-close">X</button>
+        </section>
+      </div>
+      <!-- 5-day local Weather forecast form -->
+      <section class="future-forecast">
+        <!-- current temp -->
+        <div class="today" id="current-temp">
+          <div class="others">
+            <div class="day">Monday</div>
+            <div class="temp">Night - 25.6&#176; C</div>
+            <div class="temp">Day - 35.6&#176; C</div>
+          </div>
+          <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon" />
+        </div>
+        <!-- weather forecast -->
+        <div class="weather-forecast" id="weather-forecast">
+          <div class="weather-forecast-item">
+            <div class="day">Tue</div>
+            <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon" />
+            <div class="temp">Night - 25.6&#176; C</div>
+            <div class="temp">Day - 35.6&#176; C</div>
+          </div>
+          <div class="weather-forecast-item">
+            <div class="day">Wed</div>
+            <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon" />
+            <div class="temp">Night - 25.6&#176;C</div>
+            <div class="temp">Day - 35.6&#176; C</div>
+          </div>
+          <div class="weather-forecast-item">
+            <div class="day">Thrus</div>
+            <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon" />
+            <div class="temp">Night - 25.6&#176; C</div>
+            <div class="temp">Day - 35.6&#176; C</div>
+          </div>
+          <div class="weather-forecast-item">
+            <div class="day">Friday</div>
+            <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon" />
+            <div class="temp">Night - 25.6&#176; C</div>
+            <div class="temp">Day - 35.6&#176; C</div>
+          </div>
+          <div class="weather-forecast-item">
+            <div class="day">Sat</div>
+            <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon" />
+            <div class="temp">Night - 25.6&#176; C</div>
+            <div class="temp">Day - 35.6&#176; C</div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="./script.js" type="module" defer></script>
+</body>
+
+</html>

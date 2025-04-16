@@ -10,7 +10,7 @@ const whitelist = [
   "http://localhost:3000",
   "http://localhost:5173",
   "https://danielmason89.github.io/daniel-mason-project-submission-for-intro-to-development/",
-  "https://65496f9271ad240ef5ea17e2--silver-sopapillas-a40fba.netlify.app/",
+  "https://weather-io-be7x.onrender.com",
 ];
 
 // Set up CORS options, allowing requests from whitelisted domains and handling errors

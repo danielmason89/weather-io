@@ -1,8 +1,9 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
+import path from "path";
 import rateLimit from "express-rate-limit";
-import weather from "./weather.js";
+import weatherRouter from "./weather.js";
 
 // Define a whitelist of domains for CORS
 const whitelist = [
@@ -27,12 +28,13 @@ const corsOptions = {
 
 // Configure rate limiting to prevent abuse
 const limiter = rateLimit({
-  windowMs: parseInt(process.env.RATE_LIMIT_WINDOW_MS, 10), // Time window in milliseconds
-  max: parseInt(process.env.RATE_LIMIT_MAX_REQUESTS, 10), // Maximum number of requests per window
+  windowMs: parseInt(process.env.RATE_LIMIT_WINDOW_MS, 10),
+  max: parseInt(process.env.RATE_LIMIT_MAX_REQUESTS, 10),
 });
 
 dotenv.config();
 const app = express();
+const __dirname = path.resolve();
 
 // Middleware
 app.use(express.json());
@@ -40,11 +42,17 @@ app.use(express.static("public"));
 app.use(cors(corsOptions));
 app.use(limiter);
 
+app.use(express.static(path.join(__dirname, "dist")));
+
 // Define a route for the root path
-app.get("/", (req, res) => res.json({ success: "Welcome to WeatherCheck.io API" }));
+app.get("/api", (req, res) => res.json({ success: "Welcome to WeatherCheck.io API" }));
+
+app.get("/", (_req, res) =>
+  res.sendFile(path.join(__dirname, "dist", "index.html"))
+);
 
 // Use weather router for all requests to /weather
-app.use("/weather", weather);
+app.use("/api/weather", weatherRouter);
 
 // Start the server on the specified port, falling back to 3000 if not specified
 app.listen(process.env.PORT || 3000, () =>

@@ -77,7 +77,7 @@ function clearDisplay(): void {
 
 async function fetchWeather(city: string): Promise<WeatherApiResponse | null> {
   try {
-    const res = await fetch(`http://127.0.0.1:3000/weather/${encodeURIComponent(city)}`);
+    const res = await fetch(`http://127.0.0.1:3000/api/weather/${encodeURIComponent(city)}`);
     if (!res.ok) {
       throw new Error(res.status === 404 || res.status === 400
         ? "Invalid entry – please enter a valid city."

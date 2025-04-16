@@ -8,7 +8,7 @@
     "dev:api": "nodemon index.js",
     "dev:client": "vite --port 5173",
     "start": "node index.js",
-    "build": "npm run build",
+    "build": "vite build",
     "preview": "npm run preview"
   },
   "repository": {

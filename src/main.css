@@ -622,6 +622,7 @@ button:disabled {
     display: flex;
     justify-content: center;
     padding-top: 1rem;
+  }
 
   .card h3 {
     font-size: 2rem;
@@ -691,7 +692,7 @@ button:disabled {
 
   .future-forecast {
     justify-content: start;
-    align-items: none;
+    align-items: center;
     overflow-x: scroll;
   }
 
@@ -732,7 +733,7 @@ button:disabled {
 @media only screen and (max-width: 1000px) {
   .future-forecast {
     justify-content: start;
-    align-items: none;
+    align-items: center;
     overflow-x: scroll;
   }
 }

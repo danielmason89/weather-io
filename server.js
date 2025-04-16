@@ -9,7 +9,7 @@ import weatherRouter from "./weather.js";
 const whitelist = [
   "http://localhost:3000",
   "http://localhost:5173",
-  "https://danielmason89.github.io/daniel-mason-project-submission-for-intro-to-development/",
+  "https://github.com/danielmason89/weather-io",
   "https://weather-io-be7x.onrender.com",
 ];
 

@@ -1,17 +1,10 @@
-// Import fetch API for making HTTP requests
-import fetch from "node-fetch";
-// Import dotenv for loading environment variables
 import dotenv from "dotenv";
-// Import express for routing
 import express from "express";
-// Initialize configuration from .env file
-dotenv.config();
 
-// Create a router instance to handle weather routes
+dotenv.config();
 const router = express.Router();
 
-// Define an asynchronous function to fetch weather data from the OpenWeatherMap API
-const fetchWeather = async (searchtext) => {
+async function fetchWeather(searchtext) {
   // Construct the URL with the search text and API key from environment variables
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${searchtext}&appid=${process.env.WEATHER_API_KEY}&units=metric`;
   try {

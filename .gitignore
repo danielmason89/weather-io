@@ -1,5 +1,11 @@
 # Logs and databases
+logs
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 *.sqlite
 
 # OS generated files
@@ -12,15 +18,21 @@ ehthumbs.db
 Thumbs.db
 
 # IDE and editor folders
-.idea/
-.vscode/
-*.swp
-*.swo
-*.swn
-*.bak
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
 # Node modules and logs (for JavaScript/Node projects)
-node_modules/
-npm-debug.log*
 .env
+node_modules
+dist
+dist-ssr
+*.local
+
 

@@ -1,19 +1,17 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
+  <head>
+     <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="title" content="weather-check" />
-  <meta name="description" content="weather-check is a weather app made by Daniel Mason" />
+  <meta name="description" content="weather-check is a weather app made to help user to know what the weather is in their area" />
   <link rel="shortcut icon" href="./images/weather-news.png" type="png" />
   <title>Weather-Checker.io</title>
-  <link rel="stylesheet" href="./main.css" />
-</head>
-
-<body>
-  <!-- Nav/Form Section -->
+  <link rel="stylesheet" href="./src/main.css" />
+  </head>
+  <body>
+    <!-- Nav/Form Section -->
   <nav class="header">
     <!-- Header Section -->
     <header class="header-container">
@@ -57,13 +55,13 @@
       <div class="modal-bg">
         <section class="card" id="hidden">
           <div class="weather">
-            <h3>Today's Weather</h3>
             <div class="bottom-card">
               <section class="header-section">
+                <h3>Today's Weather</h3>
                 <img src="" class="weather-icon" alt="" />
                 <section class="weather-header">
                   <h2 class="temp"></h2>
-                  <h3 class="city"></h3>
+                  <h3 id="city" class="city"></h3>
                 </section>
               </section>
               <section class="details">
@@ -135,8 +133,6 @@
       </section>
     </div>
   </main>
-
-  <script src="./script.js" type="module" defer></script>
-</body>
-
+    <script type="module" src="./src/main.ts"></script>
+  </body>
 </html>
